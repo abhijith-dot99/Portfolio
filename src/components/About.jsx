@@ -13,9 +13,6 @@ export default function About() {
             <span className="eyebrow__line" aria-hidden="true" />
             Web Developer · Kerala, India
           </p>
-          <h1 id="about-title" className="section-title about__title">
-            Turning ideas into <em>functional</em> digital products.
-          </h1>
         </div>
 
         <figure className="about__portrait about__intro">
@@ -36,11 +33,11 @@ export default function About() {
 
         <div className="about__content">
           <div className="about__body about__intro">
-            <p className="about__lead">
+            <h1 id="about-title" className="about__lead">
               I&rsquo;m Abhijith M, a web developer with 3 years of professional experience
               building production websites and applications with Next.js, React, PHP and
               WordPress.
-            </p>
+            </h1>
             <p>
               I currently build and maintain a live employee and office management web
               application at Pensare Marketing. Before that I created custom WordPress themes,
