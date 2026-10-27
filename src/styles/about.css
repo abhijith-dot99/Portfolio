@@ -1,0 +1,164 @@
+/* First section of the page, so it clears the fixed header */
+.about {
+  padding-top: calc(var(--header-h) + clamp(2.5rem, 6vw, 4.5rem));
+}
+
+/* Above-the-fold content animates in on load instead of on scroll */
+.about__intro {
+  animation: fadeIn 0.9s var(--ease) both;
+}
+
+.about__portrait.about__intro {
+  animation-delay: 0.12s;
+}
+
+.about__body.about__intro {
+  animation-delay: 0.2s;
+}
+
+.about__title {
+  font-size: clamp(2.25rem, 4.6vw, 4.25rem);
+  line-height: 1;
+}
+
+.about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.about__grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3rem);
+}
+
+/* Portrait */
+.about__portrait {
+  position: relative;
+  max-width: 460px;
+}
+
+.about__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 55% 30%;
+  border-radius: var(--radius-lg);
+  background: var(--stone);
+}
+
+.about__portrait .img-fallback {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+}
+
+.about__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.875rem;
+}
+
+.about__caption-name {
+  font-weight: 600;
+}
+
+.about__caption-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--muted);
+}
+
+/* Text */
+.about__content {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.about__body {
+  display: grid;
+  gap: 1.1rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.about__lead {
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.about__strengths-title {
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.strengths {
+  border-top: 1px solid var(--ink);
+}
+
+.strengths__item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition:
+    padding-left 0.35s var(--ease),
+    color 0.35s var(--ease);
+}
+
+.strengths__item:hover {
+  padding-left: 0.5rem;
+  color: var(--accent);
+}
+
+.strengths__num {
+  flex: none;
+  font-size: 0.75rem;
+  color: var(--muted-2);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 900px) {
+  .about__grid {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(1.5rem, 3vw, 2.5rem);
+    row-gap: 2rem;
+  }
+
+  /* Heading and text share the right column, beside the portrait */
+  .about__head {
+    grid-column: 7 / -1;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .about__portrait {
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 2;
+    max-width: none;
+    align-self: start;
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+
+  .about__content {
+    grid-column: 7 / -1;
+    grid-row: 2;
+  }
+}

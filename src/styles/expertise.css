@@ -1,0 +1,126 @@
+.expertise {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.expertise .eyebrow {
+  color: rgb(246 243 238 / 0.6);
+}
+
+.expertise .section-title em {
+  color: #e7825d;
+}
+
+.services {
+  display: grid;
+  border-top: 1px solid rgb(246 243 238 / 0.16);
+}
+
+.service {
+  position: relative;
+  display: grid;
+  gap: 0.75rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgb(246 243 238 / 0.16);
+}
+
+.service__num {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  font-size: 0.75rem;
+  color: rgb(246 243 238 / 0.4);
+  font-variant-numeric: tabular-nums;
+}
+
+.service__icon {
+  color: #e7825d;
+  transition: transform 0.4s var(--ease);
+}
+
+.service:hover .service__icon {
+  transform: translateY(-3px);
+}
+
+.service__title {
+  margin-top: 0.5rem;
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.service__text {
+  max-width: 34ch;
+  color: rgb(246 243 238 / 0.65);
+}
+
+.tech {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+}
+
+.tech__title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgb(246 243 238 / 0.6);
+}
+
+.tech__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.expertise .tag {
+  background: transparent;
+  border-color: rgb(246 243 238 / 0.2);
+  color: var(--paper);
+}
+
+.expertise .tag:hover {
+  border-color: var(--paper);
+}
+
+@media (min-width: 700px) {
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0;
+  }
+
+  .service {
+    padding: 2.5rem 2.25rem 2.75rem;
+    border-right: 1px solid rgb(246 243 238 / 0.16);
+  }
+
+  .service:nth-child(3n + 1) {
+    padding-left: 0;
+  }
+
+  .service:nth-child(3n) {
+    border-right: 0;
+  }
+
+  .service__num {
+    top: 2.5rem;
+    right: 2.25rem;
+  }
+
+  .service:nth-child(3n) .service__num {
+    right: 0;
+  }
+
+  .tech {
+    grid-template-columns: 220px 1fr;
+    align-items: center;
+  }
+}
